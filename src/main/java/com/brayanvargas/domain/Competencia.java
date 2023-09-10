@@ -6,20 +6,20 @@ import java.util.List;
 public class Competencia {
     private String nombreCompetenciaBV;
     private static final String PATROCINADOR_COMPETENCIA_BV = "Red Bull";
-    private List<Etapa> etapas;
-    private static int nroCompetencia = 0;
-    private int numeroCompetencia;
+    private List<Etapa> etapasBV;
+    private static int nroCompetenciaBV = 0;
+    private int numeroCompetenciaBV;
 
     private Competencia(String nombreCompetenciaBV) {
         this.nombreCompetenciaBV = nombreCompetenciaBV;
-        this.etapas = new ArrayList<>();
-        this.numeroCompetencia = nroCompetencia + 1;
+        this.etapasBV = new ArrayList<>();
+        this.numeroCompetenciaBV = nroCompetenciaBV + 1;
 
-        nroCompetencia++;
+        nroCompetenciaBV++;
     }
 
     public static Competencia crearCompetencia(String nombreCompetenciaBV) {
-        if (nroCompetencia != 1){
+        if (nroCompetenciaBV != 1){
             System.out.println("En esta lógica, no debería de haber más de una competencia.");
             return null;
         } else {
@@ -32,14 +32,14 @@ public class Competencia {
     }
 
     public List<Etapa> getEtapas() {
-        return etapas;
+        return etapasBV;
     }
 
     public static int getNroCompetencia() {
-        return nroCompetencia;
+        return nroCompetenciaBV;
     }
 
     public int getNumeroCompetencia() {
-        return numeroCompetencia;
+        return numeroCompetenciaBV;
     }
 }
