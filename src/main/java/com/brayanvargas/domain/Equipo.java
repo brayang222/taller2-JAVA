@@ -26,6 +26,15 @@ public class Equipo {
         }
     }
 
+    public static Corredor crearCorredor(String nombreBV, Equipo equipoBV){
+        if (Corredor.getNroCorredoresBV() < 5) {
+            return new Corredor(nombreBV, equipoBV);
+        } else {
+            System.out.println("No se pueden tener más de 5 corredores en un equipo");
+            return null;
+        }
+    }
+
     public String getNombreEquipoBV() {
         return nombreEquipoBV;
     }

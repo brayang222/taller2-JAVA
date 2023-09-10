@@ -7,21 +7,12 @@ public class Corredor {
     private static int nroCorredoresBV = 0;
     private int numeroCorredorBV;
 
-    private Corredor(String nombreBV, Equipo equipoBV) {
+    public Corredor(String nombreBV, Equipo equipoBV) {
         this.nombreBV = nombreBV;
         this.equipoBV = equipoBV;
         this.numeroCorredorBV = nroCorredoresBV + 1;
 
         Corredor.nroCorredoresBV++;
-    }
-
-    public static Corredor crearCorredor(String nombreBV, Equipo equipoBV){
-        if (nroCorredoresBV < 5) {
-            return new Corredor(nombreBV, equipoBV);
-        } else {
-            System.out.println("No se pueden tener más de 5 corredores en un equipo");
-            return null;
-        }
     }
 
     public int getIdBV() {

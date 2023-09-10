@@ -19,12 +19,15 @@ public class Etapa {
     }
 
     public static Etapa crearEtapa(int numEtapaBV, Equipo equipoGanador) {
-        if(nroEtapasBV != 10) {
+        if(numEtapaBV > 10) {
             System.out.println("La competencia debe contener exactamente 10 etapas");
             return null;
         } else {
             return new Etapa(numEtapaBV, equipoGanador);
+
         }
+
+
     }
 
     public int getNumEtapaBV() {
@@ -41,5 +44,9 @@ public class Etapa {
 
     public int getNumeroEtapaBV() {
         return numeroEtapaBV;
+    }
+
+    public static Equipo getEquipoGanador() {
+        return equipoGanador;
     }
 }
