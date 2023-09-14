@@ -8,6 +8,7 @@ public class Equipo {
     private List<Corredor> corredoresBV;
     private static Integer nroEquiposBV = 0;
     private int numeroEquipoBV;
+    private int contadorCorredores;
 
     private Equipo(String nombreEquipoBV) {
         this.nombreEquipoBV = nombreEquipoBV;
@@ -27,8 +28,11 @@ public class Equipo {
     }
 
     public static Corredor crearCorredor(String nombreBV, Equipo equipoBV){
-        if (Corredor.getNroCorredoresBV() < 5) {
-            return new Corredor(nombreBV, equipoBV);
+        if (equipoBV.contadorCorredores < 5) {
+            Corredor nuevoCorredor = new Corredor(nombreBV, equipoBV);
+            equipoBV.getCorredoresBV().add(nuevoCorredor);
+            equipoBV.contadorCorredores++;
+            return nuevoCorredor;
         } else {
             System.out.println("No se pueden tener más de 5 corredores en un equipo");
             return null;

@@ -34,4 +34,5 @@ public class Corredor {
     public int getNumeroCorredorBV() {
         return numeroCorredorBV;
     }
+
 }
