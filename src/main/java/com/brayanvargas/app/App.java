@@ -4,10 +4,8 @@ import com.brayanvargas.domain.Corredor;
 import com.brayanvargas.domain.Equipo;
 import com.brayanvargas.domain.Etapa;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class App {
     public static void main(String[] args) {
@@ -56,16 +54,53 @@ public class App {
             System.out.println(corredor.getNombreBV());
         }
 
-        Etapa etapa1 = Etapa.crearEtapa(1, equipo1);
-        Etapa etapa2 = Etapa.crearEtapa(2, equipo1);
-        Etapa etapa3 = Etapa.crearEtapa(3, equipo3);
-        Etapa etapa4 = Etapa.crearEtapa(4, equipo3);
-        Etapa etapa5 = Etapa.crearEtapa(5, equipo3);
-        Etapa etapa6 = Etapa.crearEtapa(6, equipo3);
-        Etapa etapa7 = Etapa.crearEtapa(7, equipo3);
-        Etapa etapa8 = Etapa.crearEtapa(8, equipo2);
-        Etapa etapa9 = Etapa.crearEtapa(9, equipo4);
-        Etapa etapa10 = Etapa.crearEtapa(10, equipo5);
+        System.out.println("---------------------------------------------------------");
+
+        List<Etapa> resultadosEtapas = new ArrayList<>();
+
+        Etapa etapa1 = Etapa.crearEtapa(1);
+        Etapa etapa2 = Etapa.crearEtapa(2);
+        Etapa etapa3 = Etapa.crearEtapa(3);
+        Etapa etapa4 = Etapa.crearEtapa(4);
+        Etapa etapa5 = Etapa.crearEtapa(5);
+        Etapa etapa6 = Etapa.crearEtapa(6);
+        Etapa etapa7 = Etapa.crearEtapa(7);
+        Etapa etapa8 = Etapa.crearEtapa(8);
+        Etapa etapa9 = Etapa.crearEtapa(9);
+        Etapa etapa10 = Etapa.crearEtapa(10);
+
+        etapa1.agregarEquipoGanador(equipo1);
+        etapa2.agregarEquipoGanador(equipo1);
+        etapa3.agregarEquipoGanador(equipo3);
+        etapa4.agregarEquipoGanador(equipo3);
+        etapa5.agregarEquipoGanador(equipo3);
+        etapa6.agregarEquipoGanador(equipo3);
+        etapa7.agregarEquipoGanador(equipo3);
+        etapa8.agregarEquipoGanador(equipo2);
+        etapa9.agregarEquipoGanador(equipo4);
+        etapa10.agregarEquipoGanador(equipo5);
+
+        resultadosEtapas.add(etapa1);
+        resultadosEtapas.add(etapa2);
+        resultadosEtapas.add(etapa3);
+        resultadosEtapas.add(etapa4);
+        resultadosEtapas.add(etapa5);
+        resultadosEtapas.add(etapa6);
+        resultadosEtapas.add(etapa7);
+        resultadosEtapas.add(etapa8);
+        resultadosEtapas.add(etapa9);
+        resultadosEtapas.add(etapa10);
+
+        for (int i = 0; i < resultadosEtapas.size(); i++) {
+            Etapa etapa = resultadosEtapas.get(i);
+            List<Equipo> equiposGanadores = etapa.getEquiposGanadores();
+            System.out.println("Ganadores de la etapa " + (i + 1) + ":");
+            for (Equipo equipo : equiposGanadores) {
+                System.out.println("- " + equipo.getNombreEquipoBV());
+            }
+        }
+
+        System.out.println("---------------------------------------------------------");
 
         List<String> nombresCorredores = new ArrayList<>();
 

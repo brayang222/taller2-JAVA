@@ -8,26 +8,28 @@ public class Etapa {
     private List<Equipo> equiposBV;
     private static int nroEtapasBV = 0;
     private int numeroEtapaBV;
-    private static Equipo equipoGanador;
+    private List<Equipo> equiposGanadores;
 
-    private Etapa(int numEtapaBV, Equipo equipoGanador) {
+    private Etapa(int numEtapaBV) {
         this.numEtapaBV = numEtapaBV;
         this.equiposBV = new ArrayList<>();
         this.numeroEtapaBV = nroEtapasBV + 1;
+        this.equiposGanadores = new ArrayList<>();
 
         Etapa.nroEtapasBV++;
     }
 
-    public static Etapa crearEtapa(int numEtapaBV, Equipo equipoGanador) {
+    public static Etapa crearEtapa(int numEtapaBV) {
         if(numEtapaBV > 10) {
             System.out.println("La competencia debe contener exactamente 10 etapas");
             return null;
         } else {
-            return new Etapa(numEtapaBV, equipoGanador);
-
+            return new Etapa(numEtapaBV);
         }
+    }
 
-
+    public void agregarEquipoGanador(Equipo equipoGanador) {
+        equiposGanadores.add(equipoGanador);
     }
 
     public int getNumEtapaBV() {
@@ -46,7 +48,7 @@ public class Etapa {
         return numeroEtapaBV;
     }
 
-    public static Equipo getEquipoGanador() {
-        return equipoGanador;
+    public List<Equipo> getEquiposGanadores() {
+        return equiposGanadores;
     }
 }
